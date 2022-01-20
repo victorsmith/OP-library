@@ -1,8 +1,5 @@
-.book-card {
-    background-color: rgb(107, 134, 252);
-    width: fit-content;
-    padding: 1em;
-    border-radius: 10px;
+* {
+    font-family: sans-serif;
 }
 
 .main {
@@ -10,6 +7,20 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1em;
     row-gap: 1em;
+    margin: 1em 0 0 0;
+}
+
+.book-card {
+    background-color: rgb(107, 134, 252);
+    width: auto;
+    height: fit-content;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.delete-button {
+    /* background-color: red; */
+    display: block;
 }
 
 .form-section {
@@ -26,4 +37,3 @@ label {
 button {
     margin-top: 1em;
 }
-
