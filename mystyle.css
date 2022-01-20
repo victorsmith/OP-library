@@ -1,0 +1,29 @@
+.book-card {
+    background-color: rgb(107, 134, 252);
+    width: fit-content;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+label {
+    padding-top: 1em;
+}
+
+button {
+    margin-top: 1em;
+}
+
