@@ -99,8 +99,14 @@ function deleteCard(targetIndex) {
     displayLibraryContent()
 }
 
-function toggleReadStatus(bookIndex) {
-    console.log(bookIndex);
+function toggleReadStatus(targetIndex) {
+    myLibrary.forEach((book) => {
+        if (book.index == targetIndex) {
+            const index = Number(myLibrary.indexOf(book));
+            myLibrary[index].read = !myLibrary[index].read
+        }
+    })
+    displayLibraryContent()
 }
 
 window.onload = () => {
