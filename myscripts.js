@@ -1,6 +1,27 @@
 let myLibrary = []
 
-// testing
+class Book {
+    constructor(index, title, author, pages, read) {
+        this.index = index
+        this.name = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+        this.info = () => {
+            let infoStr = `${title}, by ${author}\nPage Count: ${pages} pages\nStatus: ${
+                read ? 'read' : 'not read'
+            }`
+            return infoStr
+        }
+    }
+
+    // getInfo() {
+    //      let infoStr = `${title}, by ${author}\nPage Count: ${pages} pages\nStatus: ${read ? 'read' : 'not read'}`
+    //      return infoStr
+    // }
+}
+
+// testing 
 const theHobbit = new Book(
     myLibrary.length,
     'The Hobbit',
@@ -10,36 +31,17 @@ const theHobbit = new Book(
 )
 myLibrary.push(theHobbit)
 
-const theHobbit2 = new Book(
+const onePiece = new Book(
     myLibrary.length,
-    'The Hobbit',
-    'J.R.R Tolkien',
-    295,
+    'One Piece',
+    'Oda',
+    99,
     false
 )
-myLibrary.push(theHobbit2)
+myLibrary.push(onePiece)
 
 
 
-// window.onchange = () => {
-// 	const main = document.querySelector('.main')
-// 	const bookCards = main.querySelectorAll('button')
-// 	console.log(bookCards)	
-// }
-
-
-
-function Book(index, title, author, pages, read) {   
-    this.index = index;
-    this.name = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = () => {
-        let infoStr = `${title}, by ${author}\nPage Count: ${pages} pages\nStatus: ${read ? 'read' : 'not read'}`
-        return infoStr
-    }     
-}
 
 function submitForm() {
     // console.log(event.target.elements.searchTerm.value)
@@ -68,9 +70,9 @@ function displayLibraryContent() {
   	page.innerHTML = '';
   	
     for (book of myLibrary) {
+        // <h2>${book.index}</h2>
         const bookCard = `
             <div class="book-card">
-                <h2>${book.index}</h2>
                 <h2>${book.name}</h2>
                 <h3>by ${book.author}</h3>
                 <h4>Pages: ${book.pages}</h4>
@@ -80,8 +82,6 @@ function displayLibraryContent() {
             </div>`
     	page.insertAdjacentHTML("beforeend", bookCard);
   	}    
-    
-    
 }
 
 function deleteCard(targetIndex) {
